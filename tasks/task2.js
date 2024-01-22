@@ -1,7 +1,7 @@
 /* 
    1.npm install
    2 write very powerful code inside function
-   3 npm test 
+   3 npm test or npm run watch (non-stop checking test cases)
    4 push your code
 
    Do not change function names and modules.
@@ -10,14 +10,17 @@
    Happy hacking :)
 */
 
-  function reverseNum(num) {
-    let reverse =" "
-    for (let i = num; i > 0; i = parseInt(i / 10)) {
-      let lastNum = i % 10;
-      reverse = reverse + "" + lastNum;
-    }
-    console.log(reverse);
-    return reverse;
+function allEven(num) {
+ let first=parseInt(num/1000)%10;
+ let second=parseInt(num/100)%10;
+ let third=parseInt(num/10)%10;
+ let fourth=num%10;
+ if (first%2===0 && second%2===0 && third%2===0 && fourth%2===0) {
+  return"YES";
+  }else{
+    return"NO"
   }
-  reverseNum(6412874128);
-module.exports = reverseNum;
+ }
+console.log(allEven(2468));
+
+module.exports = allEven;

@@ -1,7 +1,7 @@
 /* 
    1.npm install
    2 write very powerful code inside function
-   3 npm test 
+   3 npm test or npm run watch (non-stop checking test cases)
    4 push your code
 
    Do not change function names and modules.
@@ -10,17 +10,18 @@
    Happy hacking :)
 */
 
-function fibonacci(num) {
-  let fib = "0 1";
-  let a = 0;
-  let b = 1;
-  for (let i = 2; i < num; i++) {
-    let next = a + b;
-    fib+=" "+next;
-    a=b;
-    b=next;
+function identicalDigits(num) {
+  let first = parseInt(num / 1000) % 10;
+  let second = parseInt(num / 100) % 10;
+  let third = parseInt(num / 10) % 10;
+  let fourth = num % 10;
+  if (`${first}${second}` === `${third}${fourth}`) {
+    return "YES"
+  } else if (first===second && third===fourth) {
+    return "YES"
+  } else {
+    return "NO"
   }
-  return fib;
 }
-console.log(fibonacci(6));
-module.exports = fibonacci;
+console.log(identicalDigits(4343));
+module.exports = identicalDigits;

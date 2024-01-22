@@ -1,7 +1,7 @@
 /* 
    1.npm install
    2 write very powerful code inside function
-   3 npm test 
+   3 npm test or npm run watch (non-stop checking test cases)
    4 push your code
 
    Do not change function names and modules.
@@ -10,24 +10,14 @@
    Happy hacking :)
 */
 
-function exceptGreatAndSmall(array) {
-  let smallest = Infinity;
-  let largest = -Infinity;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] < smallest) {
-      smallest = array[i];
-    }
-    if (array[i] > largest) {
-      largest = array[i];
-    }
+function cake(radius, width, length) {
+  let diametr=2*radius;
+  if (diametr>width && diametr>length) {
+    return"YES"
+  }else{
+    return"NO"
+
   }
-  let sum = 0;
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] !== smallest && array[i] !== largest) {
-      sum += array[i];
-    }
-  }
-return sum
 }
-exceptGreatAndSmall([7,5,4,3,3,1,1])
-module.exports = exceptGreatAndSmall;
+
+module.exports = cake;

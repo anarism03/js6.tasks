@@ -1,7 +1,7 @@
 /* 
    1.npm install
    2 write very powerful code inside function
-   3 npm test 
+   3 npm test or npm run watch (non-stop checking test cases)
    4 push your code
 
    Do not change function names and modules.
@@ -10,20 +10,16 @@
    Happy hacking :)
 */
 
-function primeNums(a, b) {
-  let result = "";
-  for (let i = a; i <= b; i++) {
-    let sade = true;
-    for (let j = 2; j < a; j++) {
-      if (i % j == 0) {
-        sade = false;
-      }
-    }
-    if (sade) {
-      result = result + i + " ";
-    }
-  }
-  return result;
+function oneOdd(num) {
+  let first=parseInt(num/1000);
+  let second=parseInt(num/100);
+  let third=parseInt(num/10);
+  let fourth=num%10;
+if (first%2!==0 || second%2!==0 || third%2!==0 || fourth%2!==0) {
+  return"YES"
+}else{
+  return"NO"
 }
-console.log(primeNums(25, 50));
-module.exports = primeNums;
+
+}
+module.exports = oneOdd;

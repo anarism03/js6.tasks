@@ -1,7 +1,7 @@
 /* 
    1.npm install
    2 write very powerful code inside function
-   3 npm test 
+   3 npm test or npm run watch (non-stop checking test cases)
    4 push your code
 
    Do not change function names and modules.
@@ -10,12 +10,12 @@
    Happy hacking :)
 */
 
-function factorial(num) {
-  let result=1;
-  for (let i = 1; i <= num; i++) {
-result*=i;
- }
- return result;
+function swapDigit(num) {
+  let secondNumber=num%10;
+  let firstNumber=parseInt(num/10);
+  if (num>0 && num<99) {
+    return secondNumber*10+firstNumber;
+  }
 }
-factorial(6);
-module.exports = factorial;
+console.log(swapDigit(67));
+module.exports = swapDigit;

@@ -1,7 +1,7 @@
 /* 
    1.npm install
    2 write very powerful code inside function
-   3 npm test 
+   3 npm test or npm run watch (non-stop checking test cases)
    4 push your code
 
    Do not change function names and modules.
@@ -10,14 +10,20 @@
    Happy hacking :)
 */
 
-function findSum(num) {
-  let summary=0;
-  let term=0;
-  for (let i = 0; i < num; i++) {
-  term=term*10+2;
-  summary+=term;
+function rowDigit(num) {
+  let first = parseInt(num / 1000)%10;
+  let second = parseInt(num / 100)%10;
+  let third = parseInt(num / 10) % 10;
+  let fourth = num % 10;
+  if (first === 3 && second === 7) {
+    return "YES"
+  } else if (second === 3 && third === 7) {
+    return "YES"
+  } else if (third === 3 && fourth === 7) {
+    return "YES"
+  } else {
+    return "NO"
+  }
 }
-return summary;
-}
-console.log(findSum(3));;
-module.exports = findSum;
+console.log(rowDigit(3337));
+module.exports = rowDigit;
