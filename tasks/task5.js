@@ -10,14 +10,17 @@
    Happy hacking :)
 */
 
-function switchNeighbors(array) {
-  for (let i = 0; i < array.length-1; i+=2) {
-    let element = array[i];
-    array[i]=array[i+1];
-    array[i+1]=element;
+function fibonacci(num) {
+  let fib = "0 1";
+  let a = 0;
+  let b = 1;
+  for (let i = 2; i < num; i++) {
+    let next = a + b;
+    fib+=" "+next;
+    a=b;
+    b=next;
   }
-  console.log(array);
-  return array;
+  return fib;
 }
-switchNeighbors([8,-1,4,6,14]);
-module.exports = switchNeighbors;
+console.log(fibonacci(6));
+module.exports = fibonacci;

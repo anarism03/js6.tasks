@@ -9,18 +9,13 @@
 
    Happy hacking :)
 */
-function diffElems(array) {
-  let uniqueArray = [];
 
-  for (let i = 0; i < array.length; i++) {
-    let element = array[i];
-
-    if (!uniqueArray.includes(element)) {
-      uniqueArray.push(element)
-    } 
-  }
-let lengthOfUniqueArray=uniqueArray.length
-  return lengthOfUniqueArray;
+function factorial(num) {
+  let result=1;
+  for (let i = 1; i <= num; i++) {
+result*=i;
+ }
+ return result;
 }
-module.exports = diffElems;
-
+factorial(6);
+module.exports = factorial;

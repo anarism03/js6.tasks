@@ -10,15 +10,20 @@
    Happy hacking :)
 */
 
-function greatThanPrev(array) {
-  let result=[];
-  for (let i = 1; i < array.length; i++) {
-    if (array[i]>array[i-1]) {
-      result.push(array[i]);
+function primeNums(a, b) {
+  let result = "";
+  for (let i = a; i <= b; i++) {
+    let sade = true;
+    for (let j = 2; j < a; j++) {
+      if (i % j == 0) {
+        sade = false;
+      }
+    }
+    if (sade) {
+      result = result + i + " ";
     }
   }
-  console.log(result);
   return result;
 }
-greatThanPrev([14,16,18,34,64,43,44]);
-module.exports = greatThanPrev;
+console.log(primeNums(25, 50));
+module.exports = primeNums;

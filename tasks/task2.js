@@ -10,15 +10,14 @@
    Happy hacking :)
 */
 
-function maxElemArr(array) {
-  let largestNumber=[0];
-  let maxIndex=1;
-  for (let i = 1; i < array.length; i++) {
-    if (array[i]>largestNumber) {
-      largestNumber=array[i];
-      maxIndex=i+1;
+  function reverseNum(num) {
+    let reverse =" "
+    for (let i = num; i > 0; i = parseInt(i / 10)) {
+      let lastNum = i % 10;
+      reverse = reverse + "" + lastNum;
     }
+    console.log(reverse);
+    return reverse;
   }
-  return [largestNumber, maxIndex];
-}
-module.exports = maxElemArr;
+  reverseNum(6412874128);
+module.exports = reverseNum;

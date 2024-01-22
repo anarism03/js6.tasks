@@ -10,13 +10,14 @@
    Happy hacking :)
 */
 
-function evenIndexes(array) {
-  let result=[];
-  for (let i = 0; i < array.length; i+=2) {
-result.push(array[i]);  
-  }
-  console.log(result);
-  return result;
+function findSum(num) {
+  let summary=0;
+  let term=0;
+  for (let i = 0; i < num; i++) {
+  term=term*10+2;
+  summary+=term;
 }
-evenIndexes([12,45,64,21,642,64]);
-module.exports = evenIndexes;
+return summary;
+}
+console.log(findSum(3));;
+module.exports = findSum;
