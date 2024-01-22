@@ -10,16 +10,15 @@
    Happy hacking :)
 */
 
-function operationsCount(str) {
-  let counter = 0;
-  for (let i = 1; i < str.length; i++) {
-    let element = str[i];
-    if (element === '+' || element === '-' || element === '*') {
-      counter++;
+function sumPositives(matrix) {
+  let sum = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] > 0) {
+        sum += matrix[i][j];
+      }
     }
   }
-  return counter;
+  return sum;
 }
-operationsCount('3+7*4-6/n:3*4');
-module.exports = operationsCount;
-
+module.exports = sumPositives;

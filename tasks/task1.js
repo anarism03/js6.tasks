@@ -10,9 +10,19 @@
    Happy hacking :)
 */
 
-function lazyMisha(t1, t2, t3) {
-  let minTime=Math.min(t1,t2,t3);
-  return minTime;
+function arrayElems(arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let element = 1;
+    for (let j = 0; j < arr.length; j++) {
+      if (j !== i) {
+        element *= arr[j];
+      }
+    }
+  result.push(element);
+  }
+  console.log(result);
+  return result;
 }
-
-module.exports = lazyMisha;
+arrayElems([1,2,3,4])
+module.exports = arrayElems;

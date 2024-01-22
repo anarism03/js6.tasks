@@ -10,24 +10,14 @@
    Happy hacking :)
 */
 
-function marks(num) {
-  let countTwo = 0;
-  let countFive = 0;
-  let digits = String(num).split('');
-  for (let i = 0; i < digits.length; i++) {
-    if (digits[i] === '2') {
-      countTwo++;
-    } else{
-      countFive++;
-    }
+function countOfDiffElems(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+   if (!result.includes(array[i])) {
+    result.push(array[i])
+   }
   }
-  if (countTwo > countFive) {
-    return 2;
-  } else if (countFive > countTwo) {
-    return 5;
-  } else {
-    return 'Equal';
-  }
+  return result.length;
 }
-marks(25552222);
-module.exports = marks;
+module.exports = countOfDiffElems;
+

@@ -10,18 +10,20 @@
    Happy hacking :)
 */
 
-function firstOrLast(num) {
-
-  let digits = String(num).split("");
-  let firstDigit = parseInt(digits[0]);
-  let lastDigit = parseInt(digits[digits.length - 1]);
-  if (firstDigit > lastDigit) {
-    return firstDigit;
-  } else if (lastDigit > firstDigit) {
-    return lastDigit;
-  } else {
-    return "Equal"
+function twoArrays(arr1, arr2) {
+  let result = [];
+  for (let i = 0; i < arr1.length; i++) {
+    let isInArr2 = false;
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        isInArr2 = true;
+        break;
+      }
+    }
+    if (!isInArr2) {
+      result.push(arr1[i])
+    }
   }
+  return result;
 }
-firstOrLast(3453);
-module.exports = firstOrLast;
+module.exports = twoArrays;

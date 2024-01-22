@@ -1,35 +1,25 @@
-// /* 
-//    1.npm install
-//    2 write very powerful code inside function
-//    3 npm test 
-//    4 push your code
+/* 
+   1.npm install
+   2 write very powerful code inside function
+   3 npm test 
+   4 push your code
 
-//    Do not change function names and modules.
-//    Write your code after the "return" keyword
+   Do not change function names and modules.
+   Write your code after the "return" keyword
 
-//    Happy hacking :)
-// */
+   Happy hacking :)
+*/
 
-function sleepingCars(str) {
-  let result = [];
-  let count = 0;
-  let max=0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === 'k') {
-      count++;
-    } else {
-      result.push(count);
-      count = 0;
-    }
+function interventionTheater(ticketCount, soldTickets) {
+  let totalRevenue=0;
+  for (let i = 0; i < ticketCount.length; i++) {
+for (let j = 0; j < ticketCount[i].length; j++) {
+if (soldTickets[i][j]===1) {
+  totalRevenue+=ticketCount[i][j];
+}  
+}    
   }
-  for (let i = 0; i < result.length; i++) {
-    let element = result[i];
-    if (element>max) {
-      max=element
-    }
-  }
-return max;
+  return totalRevenue;
 }
-sleepingCars('kpkpkpkkkkpkkkkkkkk');
-module.exports = sleepingCars;
 
+module.exports = interventionTheater;
