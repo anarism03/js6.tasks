@@ -10,20 +10,16 @@
    Happy hacking :)
 */
 
-function twoArrays(arr1, arr2) {
-  let result = [];
-  for (let i = 0; i < arr1.length; i++) {
-    let isInArr2 = false;
-    for (let j = 0; j < arr2.length; j++) {
-      if (arr1[i] === arr2[j]) {
-        isInArr2 = true;
-        break;
-      }
-    }
-    if (!isInArr2) {
-      result.push(arr1[i])
+function largerThanNeighbors(array) {
+  let counter=0;
+  for (let i = 1; i < array.length-1; i++) {
+    const element = array[i];
+    if (element>array[i+1] && element>array[i-1]) {
+      counter++
     }
   }
-  return result;
+  console.log(counter);
+return counter;
 }
-module.exports = twoArrays;
+largerThanNeighbors([9,5,-7,-7,5,-9,-4])
+module.exports = largerThanNeighbors;

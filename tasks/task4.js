@@ -10,15 +10,22 @@
    Happy hacking :)
 */
 
-function sumPositives(matrix) {
-  let sum = 0;
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[i].length; j++) {
-      if (matrix[i][j] > 0) {
-        sum += matrix[i][j];
+function withoutRepetition(array) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    const currentElement = array[i];
+    let isDuplicate = false;
+    for (let j = 0; j < result.length; j++) {
+      if (currentElement === result[j]) {
+        isDuplicate = true;
+        break;
       }
     }
-  }
-  return sum;
+if (!isDuplicate) {
+  result.push(currentElement);
 }
-module.exports = sumPositives;
+  }
+  return result;
+}
+withoutRepetition([0, 1, -2, 1, 0, 0, 3])
+module.exports = withoutRepetition;

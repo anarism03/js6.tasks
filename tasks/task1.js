@@ -9,20 +9,24 @@
 
    Happy hacking :)
 */
-
-function arrayElems(arr) {
-  let result = [];
-  for (let i = 0; i < arr.length; i++) {
-    let element = 1;
-    for (let j = 0; j < arr.length; j++) {
-      if (j !== i) {
-        element *= arr[j];
-      }
-    }
-  result.push(element);
+function largerThanAverage(array) {
+  let sumArr = 0;
+  let sumAboveAvarage = 0
+  let count = 0;
+  let average;
+  for (let i = 0; i < array.length; i++) {
+    sumArr += array[i];
   }
-  console.log(result);
-  return result;
+  average = sumArr / array.length;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > average) {
+      sumAboveAvarage += array[i]
+      count++;
+    }
+  }
+  // console.log([sum, countAboveAverage]);
+  return [sumAboveAvarage, count]
 }
-arrayElems([1,2,3,4])
-module.exports = arrayElems;
+
+largerThanAverage([4, 3, 5, 4, 8, 12, 1]);
+module.exports = largerThanAverage;

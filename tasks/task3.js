@@ -10,14 +10,17 @@
    Happy hacking :)
 */
 
-function countOfDiffElems(array) {
-  let result = [];
+function swithcElems(array) {
+  let minIndex=0;
+  let maxIndex=0;
   for (let i = 0; i < array.length; i++) {
-   if (!result.includes(array[i])) {
-    result.push(array[i])
-   }
+if (array[i]<array[minIndex]) {
+  minIndex=i;
+}else if (array[i]>array[maxIndex]) {
+  maxIndex=i;
+}  
   }
-  return result.length;
+[array[maxIndex],array[minIndex]]=[array[minIndex],array[maxIndex]];
+return array;
 }
-module.exports = countOfDiffElems;
-
+module.exports = swithcElems;
