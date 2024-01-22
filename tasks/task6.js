@@ -10,16 +10,24 @@
    Happy hacking :)
 */
 
-function interventionTheater(ticketCount, soldTickets) {
-  let totalRevenue=0;
-  for (let i = 0; i < ticketCount.length; i++) {
-for (let j = 0; j < ticketCount[i].length; j++) {
-if (soldTickets[i][j]===1) {
-  totalRevenue+=ticketCount[i][j];
-}  
-}    
+function exceptGreatAndSmall(array) {
+  let smallest = Infinity;
+  let largest = -Infinity;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < smallest) {
+      smallest = array[i];
+    }
+    if (array[i] > largest) {
+      largest = array[i];
+    }
   }
-  return totalRevenue;
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== smallest && array[i] !== largest) {
+      sum += array[i];
+    }
+  }
+return sum
 }
-
-module.exports = interventionTheater;
+exceptGreatAndSmall([7,5,4,3,3,1,1])
+module.exports = exceptGreatAndSmall;

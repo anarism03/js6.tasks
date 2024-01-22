@@ -10,16 +10,15 @@
    Happy hacking :)
 */
 
-function largerThanNeighbors(array) {
-  let counter=0;
-  for (let i = 1; i < array.length-1; i++) {
-    const element = array[i];
-    if (element>array[i+1] && element>array[i-1]) {
-      counter++
+function maxElemArr(array) {
+  let largestNumber=[0];
+  let maxIndex=1;
+  for (let i = 1; i < array.length; i++) {
+    if (array[i]>largestNumber) {
+      largestNumber=array[i];
+      maxIndex=i+1;
     }
   }
-  console.log(counter);
-return counter;
+  return [largestNumber, maxIndex];
 }
-largerThanNeighbors([9,5,-7,-7,5,-9,-4])
-module.exports = largerThanNeighbors;
+module.exports = maxElemArr;

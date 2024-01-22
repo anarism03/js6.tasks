@@ -10,22 +10,15 @@
    Happy hacking :)
 */
 
-function withoutRepetition(array) {
-  let result = [];
-  for (let i = 0; i < array.length; i++) {
-    const currentElement = array[i];
-    let isDuplicate = false;
-    for (let j = 0; j < result.length; j++) {
-      if (currentElement === result[j]) {
-        isDuplicate = true;
-        break;
-      }
+function greatThanPrev(array) {
+  let result=[];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i]>array[i-1]) {
+      result.push(array[i]);
     }
-if (!isDuplicate) {
-  result.push(currentElement);
-}
   }
+  console.log(result);
   return result;
 }
-withoutRepetition([0, 1, -2, 1, 0, 0, 3])
-module.exports = withoutRepetition;
+greatThanPrev([14,16,18,34,64,43,44]);
+module.exports = greatThanPrev;

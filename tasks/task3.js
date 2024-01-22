@@ -10,17 +10,13 @@
    Happy hacking :)
 */
 
-function swithcElems(array) {
-  let minIndex=0;
-  let maxIndex=0;
-  for (let i = 0; i < array.length; i++) {
-if (array[i]<array[minIndex]) {
-  minIndex=i;
-}else if (array[i]>array[maxIndex]) {
-  maxIndex=i;
-}  
+function evenIndexes(array) {
+  let result=[];
+  for (let i = 0; i < array.length; i+=2) {
+result.push(array[i]);  
   }
-[array[maxIndex],array[minIndex]]=[array[minIndex],array[maxIndex]];
-return array;
+  console.log(result);
+  return result;
 }
-module.exports = swithcElems;
+evenIndexes([12,45,64,21,642,64]);
+module.exports = evenIndexes;

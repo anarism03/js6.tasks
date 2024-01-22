@@ -10,20 +10,14 @@
    Happy hacking :)
 */
 
-function arrayDiaqonals(array) {
-let firstDiagSum=0;
-let secondDiagSum=0;
-for (let i = 0; i < array.length; i++) {
-firstDiagSum+=array[i][i];
-secondDiagSum+=array[i][array.length-1-i];
+function switchNeighbors(array) {
+  for (let i = 0; i < array.length-1; i+=2) {
+    let element = array[i];
+    array[i]=array[i+1];
+    array[i+1]=element;
+  }
+  console.log(array);
+  return array;
 }
-console.log([firstDiagSum,secondDiagSum]);
-  return [firstDiagSum,secondDiagSum];
-}
-arrayDiaqonals([
-  [134, 475, 30, 424],
-  [303, 151, 419, 235],
-  [248, 166, 90, 42],
-  [318, 237, 184, 36]
-])
-module.exports = arrayDiaqonals;
+switchNeighbors([8,-1,4,6,14]);
+module.exports = switchNeighbors;
